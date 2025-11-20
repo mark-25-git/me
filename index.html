@@ -438,13 +438,17 @@
         footer .contact-info {
             font-size: 20px;
             margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
 
         footer .contact-info a {
             color: var(--text-primary);
             text-decoration: none;
-            margin: 0 20px;
             transition: opacity 0.3s;
+            white-space: nowrap;
         }
 
         footer .contact-info a:hover {
