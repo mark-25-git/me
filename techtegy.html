@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jun Jie - Software & Tools Developer for Techtegy IT</title>
+    <style>
+        :root {
+            --bg-base: #f5f5f7;
+            --bg-card: #ffffff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --accent-blue: #0066cc;
+            --accent-hover: #0077ed;
+            --border-soft: #d2d2d7;
+            --border-light: #e8e8ed;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(245, 245, 247, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            height: 48px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav-content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: -0.2px;
+            color: var(--text-primary);
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 100px;
+            text-align: center;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -3px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .hero .headline-name {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--text-primary);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 980px;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 15px;
+            transition: background-color 0.2s ease;
+            border: 1px solid var(--text-primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #333336;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent-blue);
+            padding: 12px 24px;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 15px;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            text-decoration: underline;
+        }
+
+        /* Story Section: The Engine (Brain + AI) */
+        .engine-section {
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .engine-title {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .engine-text {
+            font-size: 21px;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: -0.3px;
+        }
+
+        /* Spec Showcase (Linear Project Blocks) */
+        .showcase-section {
+            padding: 40px 0 100px;
+        }
+
+        .spec-block {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 28px;
+            padding: 80px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .spec-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .spec-category {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+        }
+
+        .spec-block h2 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        .spec-block p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .spec-link {
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--accent-blue);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .spec-link:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        /* Tech Specs Table */
+        .specs-table-section {
+            padding: 100px 0;
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .specs-table-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .spec-table tr {
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .spec-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .spec-table td {
+            padding: 24px 0;
+            vertical-align: top;
+            font-size: 16px;
+        }
+
+        .spec-label {
+            width: 30%;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .spec-value {
+            width: 70%;
+            color: var(--text-secondary);
+        }
+
+        .spec-value strong {
+            color: var(--text-primary);
+        }
+
+        /* History & Timeline */
+        .history-section {
+            padding: 120px 0;
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .history-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .hero h1 {
+                font-size: 48px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            .engine-title {
+                font-size: 32px;
+            }
+            .spec-block {
+                padding: 40px;
+            }
+            .spec-block h2 {
+                font-size: 28px;
+            }
+            .spec-table td {
+                display: block;
+                width: 100%;
+                padding: 12px 0;
+            }
+            .spec-label {
+                font-weight: 700;
+                margin-bottom: 4px;
+            }
+        }
+
+        .history-col h3 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 32px;
+        }
+
+        .history-item {
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 32px;
+            margin-bottom: 32px;
+        }
+
+        .history-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .history-date {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .history-title {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .history-subtitle {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .history-details {
+            list-style: none;
+            padding: 0;
+        }
+
+        .history-details li {
+            position: relative;
+            padding-left: 16px;
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .history-details li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--text-secondary);
+        }
+
+        /* CTA / Closing Section */
+        .cta-section {
+            padding: 120px 0;
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+            line-height: 1.15;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Footnotes */
+        .footnotes-section {
+            padding: 56px 0;
+            font-size: 12px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .footnotes-section ol {
+            padding-left: 16px;
+        }
+
+        .footnotes-section li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 32px 0;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Details Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 480px;
+            width: 90%;
+            text-align: left;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .modal-content p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .modal-close {
+            background-color: var(--text-primary);
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 980px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background-color: #333336;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">Jun Jie</div>
+            <div class="nav-links">
+                <a href="#engine">Engine</a>
+                <a href="#showcase">Specs</a>
+                <a href="#history">Experience</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Hi Techtegy IT.</h1>
+            <h1 class="headline-name">I am Jun Jie.</h1>
+            <p>
+                I heard about your company from my friend who works there. They mentioned Techtegy is a fully remote startup with many diverse projects. I knew I had to apply because I love working on different projects and want to expose myself to a wider IT business industry. Since I am not in Kuala Lumpur, remote work means I can start immediately without relocating, which fits my hustle lifestyle.
+            </p>
+            <p style="margin-top: 24px;">
+                More than that, I am looking for a real opportunity to prove myself. I have spent enough time calling myself an unrecognized talent, and it is time to find out if I am actually right or if I just need to be humbled. I believe my capabilities deserve a bigger stage. Let's run a demo and find out.
+            </p>
+            <div class="btn-group">
+                <a href="#contact" class="btn-primary">Let's chat and run a demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section: The Engine -->
+    <section id="engine" class="engine-section">
+        <div class="container">
+            <h2 class="engine-title">The developer speed multiplier. Brain plus AI.</h2>
+            <p class="engine-text">
+                I am a 23-year-old Business Information Systems graduate. I focus on the problem-solving logic, and AI is my tireless assistant. By combining both, I remove syntax barriers and build real tools at high speed. This remote startup setup and your wide range of projects is the perfect environment for me to deliver value immediately.
+            </p>
+        </div>
+    </section>
+
+    <!-- Spec Showcase (Projects) -->
+    <section id="showcase" class="showcase-section">
+        <div class="container">
+            <!-- Project 1 -->
+            <div class="spec-block">
+                <div class="spec-category">Featured Tool</div>
+                <h2>The Invoicing System. Simple and focused.</h2>
+                <p>
+                    Built with React. A customized invoicing application designed to manage clients and generate bills instantly. 
+                    The tool runs smoothly and removes spreadsheet complexity. It was so effective that a marketing 
+                    agency owner asked if it was paid software.
+                </p>
+                <div>
+                    <a href="#" class="spec-link" id="open-invoice-modal">View details</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="spec-block">
+                <div class="spec-category">Research & Prototype</div>
+                <h2>Blockchain E-commerce App. End-to-end execution.</h2>
+                <p>
+                    A fully individual project built from scratch with no guidelines. I even learned Solidity on the fly 
+                    with ChatGPT to implement smart contracts. It is a functioning Flutter mobile application that connects 
+                    with Solidity smart contracts to handle peer-to-peer commerce without middlemen fees. Achieved an 
+                    A Grade (4.0) for this project.
+                </p>
+                <div>
+                    <a href="#" class="spec-link" id="open-poster-modal">View project poster</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="spec-block">
+                <div class="spec-category">Production Deployments</div>
+                <h2>Live platforms. config to code.</h2>
+                <p>
+                    Responsible for setting up and deploying live architectures. Includes perabotmegah.my, a WooCommerce 
+                    project, and teevent.my, a business landing page built on Next.js. While the landing page for teevent.my 
+                    is visible, the important part is the admin system behind it, which I will demo during the interview.
+                </p>
+                <div>
+                    <a href="#" class="spec-link" style="margin-right: 24px;" id="open-perabot-modal">View perabotmegah.my status</a>
+                    <a href="https://www.teevent.my" class="spec-link" target="_blank">Visit teevent.my</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Philosophy Section -->
+    <section class="specs-table-section" style="padding: 120px 0; text-align: center;">
+        <div class="container">
+            <p style="font-size: 32px; font-weight: 700; letter-spacing: -1px; max-width: 850px; margin: 0 auto; line-height: 1.4; color: var(--text-primary);">
+                Me = an IT guy who understands real business processes, and a business person who understands technical.
+            </p>
+        </div>
+    </section>
+
+    <!-- History / Background Section -->
+    <section id="history" class="history-section">
+        <div class="container history-grid">
+            <!-- Education Column -->
+            <div class="history-col">
+                <h3>Education</h3>
+                <div class="history-item">
+                    <div class="history-date">Graduated</div>
+                    <div class="history-title">Bachelor of Information Systems (Honours)</div>
+                    <div class="history-subtitle">Universiti Tunku Abdul Rahman, Kampar, Perak</div>
+                    <ul class="history-details">
+                        <li>Major in Business Information Systems.</li>
+                        <li>Relevant coursework: Database Development, Software Engineering Principles, UX Design, Object-Oriented Systems Analysis, Business Analytics.</li>
+                        <li>Final Year Project (Flutter/Solidity) received an A Grade (4.0).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience Column -->
+            <div class="history-col">
+                <h3>Work Experience</h3>
+                <div class="history-item">
+                    <div class="history-date">Jan 2024 - May 2024</div>
+                    <div class="history-title">IT Intern</div>
+                    <div class="history-subtitle">Biofact Life Sdn. Bhd.</div>
+                    <ul class="history-details">
+                        <li>Built a meeting room appointment system using Google Apps Script to automate office scheduling.</li>
+                        <li>Developed an inventory tracking system and raw material database using AppSheet.</li>
+                        <li>Designed a product logo using Adobe Illustrator.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Let's chat.</h2>
+            <p>
+                Please do not stop at my resume. Give me a chance to interview and show you a demo of the projects I have worked on.
+            </p>
+            <div class="btn-group">
+                <a href="mailto:tanjj80@gmail.com" class="btn-primary">Email me</a>
+                <a href="https://wa.me/60123107525" class="btn-primary" style="background-color: var(--accent-blue); border-color: var(--accent-blue);" target="_blank">WhatsApp me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Designed and developed by Jun Jie. Muted light palette. No tracking.</p>
+        </div>
+    </footer>
+
+    <!-- Details Modal -->
+    <div id="invoice-modal" class="modal">
+        <div class="modal-content">
+            <h3>The Invoicing System</h3>
+            <p>
+                This application manages client lists, calculates dynamic totals, formatting, and renders clean PDF invoices.
+            </p>
+            <p>
+                It was tested by a marketing agency owner who asked if it was a paid subscription software due to its focused, single-purpose workflow.
+            </p>
+            <button class="modal-close" onclick="closeModal('invoice-modal')">Close</button>
+        </div>
+    </div>
+
+    <!-- Poster Modal -->
+    <div id="poster-modal" class="modal">
+        <div class="modal-content" style="max-width: 640px;">
+            <h3>Final Year Project Poster</h3>
+            <div style="margin: 20px 0; border: 1px solid var(--border-light); border-radius: 12px; overflow: hidden; line-height: 0;">
+                <img src="FYP2 Poster.png" alt="FYP2 Poster" style="width: 100%; height: auto; display: block;">
+            </div>
+            <button class="modal-close" onclick="closeModal('poster-modal')">Close</button>
+        </div>
+    </div>
+
+    <!-- Perabotmegah Modal -->
+    <div id="perabot-modal" class="modal">
+        <div class="modal-content">
+            <h3>perabotmegah.my</h3>
+            <p>
+                This e-commerce platform was built using PHP, WordPress, and WooCommerce to manage custom furniture catalogs, inventory, and user checkout.
+            </p>
+            <p>
+                The project has been stopped by the business owner and is no longer running online.
+            </p>
+            <button class="modal-close" onclick="closeModal('perabot-modal')">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Modal opening helper
+        function setupModal(triggerId, modalId) {
+            const trigger = document.getElementById(triggerId);
+            const modal = document.getElementById(modalId);
+            if (trigger && modal) {
+                trigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.classList.add('active');
+                });
+            }
+        }
+
+        setupModal('open-invoice-modal', 'invoice-modal');
+        setupModal('open-poster-modal', 'poster-modal');
+        setupModal('open-perabot-modal', 'perabot-modal');
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        // Close active modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+            }
+        });
+
+        // Close active modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const activeModal = document.querySelector('.modal.active');
+                if (activeModal) {
+                    activeModal.classList.remove('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
